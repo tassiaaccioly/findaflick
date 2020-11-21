@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import MovieLike from "../movielike/MovieLike";
+import "./MovieDetail.css";
 
 function MovieDetail(props) {
   const [movie, setMovie] = useState({
@@ -14,28 +15,23 @@ function MovieDetail(props) {
     popularity: "",
     imdb_id: "",
     id: "",
+    vote_average: "",
   });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const id = 550;
+        const id = props.match.params.id;
 
         const response = await axios.get(
           `https://api.themoviedb.org/3/movie/${id}?api_key=4afee1c44582b308becde04cf925a9c5`
         );
 
-        console.log(response);
-
-        console.log(response.data);
-
         setMovie({ ...response.data });
-      } catch (err) {
-        console.error(err);
-      }
+      } catch (err) {}
     };
     fetchData();
-  }, []);
+  }, [props]);
 
   function getRuntime() {
     let hour = Math.floor(movie.runtime / 60);
@@ -63,6 +59,7 @@ function MovieDetail(props) {
       <p>"{movie.tagline}"</p>
       <p>{movie.overview}</p>
       <p>Movie Popularity: #{movie.popularity}</p>
+      <p>Movie Score: {movie.vote_average}</p>
       <a href={`http://www.imdb.com/title/${movie.imdb_id}`}>See on IMDB</a>
       <div>
         <MovieLike id={movie.id} />
