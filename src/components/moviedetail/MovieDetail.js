@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import MovieLike from "../movielike/MovieLike";
+import MovieCredits from "../moviecredits/MovieCredits";
+
+import getRuntime from "../functions/getRuntime";
+import getYear from "../functions/getYear";
+
 import "./MovieDetail.css";
 
 function MovieDetail(props) {
@@ -33,33 +38,26 @@ function MovieDetail(props) {
     fetchData();
   }, [props]);
 
-  function getRuntime() {
-    let hour = Math.floor(movie.runtime / 60);
-    let min = movie.runtime % 60;
-
-    return `${hour}h${min}min`;
-  }
-
-  function getYear() {
-    let year = movie.release_date.split("-");
-
-    return year[0];
-  }
-
   return (
     <div>
       <img
         src={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`}
-        alt={`${movie.original_title}'s Poster`}
+        alt="Poster"
       />
       <h3>
-        {movie.original_title} | {getYear()}
+        {movie.name || movie.title
+          ? `${movie.name || movie.title}`
+          : movie.original_title}{" "}
+        | {getYear(movie.release_date)}
       </h3>
-      <span>{getRuntime()}</span>
-      <p>"{movie.tagline}"</p>
+      <span>{getRuntime(movie.runtime)}</span>
+      <p>
+        {movie.tagline ? `"${movie.tagline}"` : `"This movie has no tagline"`}
+      </p>
       <p>{movie.overview}</p>
       <p>Movie Popularity: #{movie.popularity}</p>
       <p>Movie Score: {movie.vote_average}</p>
+      <MovieCredits id={movie.id} />
       <a href={`http://www.imdb.com/title/${movie.imdb_id}`}>See on IMDB</a>
       <div>
         <MovieLike id={movie.id} />
