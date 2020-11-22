@@ -1,0 +1,46 @@
+h5 {
+  font-size: 1.7rem;
+}
+
+.scroll-container {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: left;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* white-space: nowrap; */
+  border-top: 2px solid #cab9b9;
+  border-bottom: 2px solid #cab9b9;
+}
+
+.director-container p,
+.actors-container p {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+.director-container strong,
+.actors-container strong {
+  font-weight: 600;
+}
+
+.actors img {
+  width: 92px;
+  height: 137px;
+}
+
+.actors,
+.directors {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.actors p,
+.directors p {
+  width: 160px;
+  text-align: center;
+}

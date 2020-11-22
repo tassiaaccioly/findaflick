@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import "./MovieLike.css";
+import "./MoviesLike.css";
 
-function MovieLike(props) {
+function MoviesLike(props) {
   const [movieLike, setMovieLike] = useState([
     {
       original_title: "",
@@ -27,15 +27,15 @@ function MovieLike(props) {
   }, [props]);
 
   return (
-    <div>
+    <div className="scroll-container01">
       {movieLike.slice(0, 10).map((movie) => (
         <Link key={movie.id} to={`/movies/${movie.id}`}>
-          <div>
+          <div className="movielike-item">
             <img
               src={`http://image.tmdb.org/t/p/w154/${movie.poster_path}`}
               alt={`${movie.original_title}'s Poster`}
             />
-            <h5>{movie.original_title}</h5>
+            <p>{movie.original_title}</p>
           </div>
         </Link>
       ))}
@@ -43,4 +43,4 @@ function MovieLike(props) {
   );
 }
 
-export default MovieLike;
+export default MoviesLike;

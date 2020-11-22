@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import MovieLike from "../movielike/MovieLike";
+import MoviesLike from "../movieslike/MoviesLike";
 import MovieCredits from "../moviecredits/MovieCredits";
+import "./MovieDetail.css";
 
 import getRuntime from "../functions/getRuntime";
 import getYear from "../functions/getYear";
@@ -39,28 +40,47 @@ function MovieDetail(props) {
   }, [props]);
 
   return (
-    <div>
-      <img
-        src={`http://image.tmdb.org/t/p/w185/${movie.poster_path}`}
-        alt="Poster"
-      />
-      <h3>
-        {movie.name || movie.title
-          ? `${movie.name || movie.title}`
-          : movie.original_title}{" "}
-        | {getYear(movie.release_date)}
-      </h3>
-      <span>{getRuntime(movie.runtime)}</span>
-      <p>
-        {movie.tagline ? `"${movie.tagline}"` : `"This movie has no tagline"`}
-      </p>
-      <p>{movie.overview}</p>
-      <p>Movie Popularity: #{movie.popularity}</p>
-      <p>Movie Score: {movie.vote_average}</p>
+    <div className="moviedetails">
+      <div className="flex">
+        <img
+          className="mainImg"
+          src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+          alt="Poster"
+        />
+        <div className="infos">
+          <h3>
+            <span>
+              {movie.name || movie.title
+                ? `${movie.name || movie.title}`
+                : movie.original_title}{" "}
+            </span>
+            | {getYear(movie.release_date)}
+          </h3>
+          <hr />
+          <p className="runtime">{getRuntime(movie.runtime)}</p>
+          <div className="textInfos">
+            {movie.tagline ? (
+              <p className="tagline">"{movie.tagline}"</p>
+            ) : (
+              <></>
+            )}
+            <p className="sinopsis">{movie.overview}</p>
+          </div>
+          <div className="data">
+            <p>Movie Popularity: #{movie.popularity}</p>
+            <p>Movie Score: {movie.vote_average} ★ </p>
+          </div>
+        </div>
+      </div>
       <MovieCredits id={movie.id} />
-      <a href={`http://www.imdb.com/title/${movie.imdb_id}`}>See on IMDB</a>
-      <div>
-        <MovieLike id={movie.id} />
+      <div className="flex">
+        <a href={`http://www.imdb.com/title/${movie.imdb_id}`}>
+          <button className="button">See on IMDB</button>
+        </a>
+      </div>
+      <div className="movielike-container">
+        <h5>Find Similar Movies</h5>
+        <MoviesLike id={movie.id} />
       </div>
     </div>
   );

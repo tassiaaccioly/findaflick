@@ -1,0 +1,20 @@
+.scroll-container01 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  border-top: 2px solid #cab9b9;
+  border-bottom: 2px solid #cab9b9;
+}
+
+.movielike-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
