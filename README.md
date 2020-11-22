@@ -1,6 +1,6 @@
 #Find a Flick
 
-This is a fully functional web application to find movies, series and related information!
+This is a fully functional and responsive web application to find movies, series and related information!
 
 You can see it here:
 
@@ -8,11 +8,12 @@ You can see it here:
 
 Next Implementations:
 
--[X] Movie/Series list; -[X] Movie/Series details;
--[] Search Bar;
--[] Movie/Series Trailer
--[] Random Movie/Series Button
--[] Best Movies
--[] Search Filters
--[] Mark your viewed movies
--[] Spotify Movie/Series Playlist
+- [x] Movie/Series list; 
+- [x] Movie/Series details;
+- [ ] Search Bar;
+- [ ] Movie/Series Trailer
+- [ ] Random Movie/Series Button
+- [ ] Best Movies
+- [ ] Search Filters
+- [ ] Mark your viewed movies
+- [ ] Spotify Movie/Series Playlist
