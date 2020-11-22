@@ -8,12 +8,11 @@ You can see it here:
 
 Next Implementations:
 
-- [] Movie/Series list
-- [] Movie/Series details
-- [] Search Bar
-- [] Movie/Series Trailer
-- [] Random Movie/Series Button
-- [] Best Movies
-- [] Search Filters
-- [] Mark your viewed movies
-- [] Spotify Movie/Series Playlist
+-[X] Movie/Series list; -[X] Movie/Series details;
+-[] Search Bar;
+-[] Movie/Series Trailer
+-[] Random Movie/Series Button
+-[] Best Movies
+-[] Search Filters
+-[] Mark your viewed movies
+-[] Spotify Movie/Series Playlist
