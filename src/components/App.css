@@ -4,14 +4,12 @@
   margin: 0;
   padding: 0;
 
-  background-color: #231e1e;
   font-family: "Poppins", Helvetica, sans-serif;
   color: #cab9b9;
 }
 
 html,
 body {
-  font-size: 10px;
   width: 100vw;
 }
 
