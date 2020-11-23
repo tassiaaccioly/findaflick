@@ -1,0 +1,149 @@
+.series-list {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 1.6rem;
+}
+
+.serieslist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.serieslist-item img {
+  width: 189px;
+  height: 282px;
+  border-radius: 12px;
+  border: 2px solid #cab9b9;
+  margin-bottom: 15px;
+}
+
+.serieslist-info h3 {
+  font-size: 1.7rem;
+}
+
+.serieslist-info span {
+  color: #b00000;
+}
+
+.serieslist-info p {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  max-height: 170px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  margin: 5px 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.seriesbutton-container {
+  display: flex;
+  justify-content: center;
+}
+
+.seriesitem-button {
+  background-color: #b00000;
+  border-radius: 8px;
+
+  padding: 3px 10px;
+  margin: 10px 0;
+}
+
+.button-container-flex {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.page-button {
+  background-color: #b00000;
+  border-radius: 8px;
+
+  padding: 2px 4px;
+  margin: 10px 15px;
+
+  line-height: 1;
+}
+
+@media only screen and (min-width: 576px) {
+  .serieslist-item {
+    flex-direction: row;
+  }
+
+  .serieslist-info {
+    width: 55vw;
+    margin-left: 40px;
+  }
+
+  .serieslist-info hr {
+    width: 55vw;
+  }
+
+  .serieslist-info p {
+    margin: 15px 0;
+  }
+
+  .seriesbutton-container {
+    margin: 15px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .series-list {
+    width: 95vw;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    margin: 30px auto;
+  }
+
+  .serieslist-item {
+    margin-right: 40px;
+  }
+
+  .serieslist-item img {
+    width: 160px;
+    height: auto;
+  }
+
+  .serieslist-info {
+    width: 25vw;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+  }
+
+  .serieslist-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .serieslist-info hr {
+    width: 25vw;
+  }
+
+  .serieslist-info p {
+    max-height: 150px;
+    min-height: 130px;
+  }
+
+  .seriesitem-button {
+    margin: 5px 0;
+  }
+
+  .button-container-flex {
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+}

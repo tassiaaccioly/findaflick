@@ -1,42 +1,46 @@
 import React from "react";
-import Logo from "./logonavbar.svg";
+import { Link } from "react-router-dom";
+
 import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
 import "./Toolbar.css";
 
-const toolbar = (props) => (
-  <header className="toolbar">
-    <nav className="toolbar__navigation">
-      <div className="toolbar__logo">
-        <img ClassName="Logosearch" src={Logo} />
-      </div>
-      <div className="spacer" />
-      <div className="toolbar__toggle-button">
-        <DrawerToggleButton click={props.drawerClickHandler} />
-      </div>
-      <div className="toolbar_navigation-items">
-        <ul>
-          <li>
-            <a href="/">Best 100</a>
-          </li>
-          <li>
-            <a href="/">Random</a>
-          </li>
-          <li>
-            <a href="/">Movies</a>
-          </li>
-          <li>
-            <a href="/">Series</a>
-          </li>
-          <li>
-            <a href="/">Search</a>
-          </li>
-          <li>
-            <a href="/">About</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-);
+function Toolbar(props) {
+  return (
+    <header className="toolbar">
+      <nav className="toolbar__navigation">
+        <Link className="toolbar__logo" to="/">
+          {/* <img src="./images/favicon.svg" /> */}
+          <h1>Find a Flick</h1>
+        </Link>
+        <div className="spacer" />
+        <div className="toolbar__toggle-button">
+          <DrawerToggleButton onClick={props.drawerClickHandler} />
+        </div>
+        <div className="toolbar_navigation-items">
+          <ul>
+            <li>
+              <Link to="/best">Best 100</Link>
+            </li>
+            <li>
+              <Link to="/random">Random</Link>
+            </li>
+            <li>
+              <Link to="/">Movies</Link>
+            </li>
+            <li>
+              <Link to="/">Series</Link>
+            </li>
+            <li>
+              <Link to="/">Search</Link>
+            </li>
+            <li>
+              <Link to="/">About</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  );
+}
 
-export default toolbar;
+export default Toolbar;

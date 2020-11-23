@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import "./YoutubePlayer.css";
+import "./YoutubePlayerX.css";
 
-function YoutubePlayer(props) {
+function YoutubePlayerX(props) {
   const [video, setVideo] = useState("");
 
   let searchTerm;
@@ -11,10 +11,8 @@ function YoutubePlayer(props) {
   const normalizeSearchTerm = () => {
     if (props.name) {
       return (searchTerm = props.name.toLowerCase().split(" ").join("%20"));
-    } else if (props.title) {
-      return (searchTerm = props.title.toLowerCase().split(" ").join("%20"));
-    } else if (props.original_title) {
-      return (searchTerm = props.original_title
+    } else if (props.original_name) {
+      return (searchTerm = props.original_name
         .toLowerCase()
         .split(" ")
         .join("%20"));
@@ -27,15 +25,18 @@ function YoutubePlayer(props) {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=${process.env.REACT_APP_YOUTUBEAPI_KEY}`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20series%20trailer%20${props.year}&key=${process.env.REACT_APP_YOUTUBEAPI_KEY}`
         );
-        console.log(response);
+
+        console.log(props.year);
 
         setVideo(response.data.items[0].id.videoId);
       } catch (err) {}
     };
     fetchData();
   }, [props]);
+
+  console.log(props.year);
 
   console.log(searchTerm);
 
@@ -59,4 +60,4 @@ function YoutubePlayer(props) {
   );
 }
 
-export default YoutubePlayer;
+export default YoutubePlayerX;

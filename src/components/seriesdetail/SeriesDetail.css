@@ -1,17 +1,17 @@
-.moviedetails {
+.seriesdetails {
   padding: 2rem;
   font-size: 1.5rem;
   text-align: left;
 }
 
-.moviedetails .mainImg {
+.seriesdetails .mainImg {
   width: 185px;
   margin: 2rem;
   border-radius: 1.2rem;
   border: 3px solid #cab9b9;
 }
 
-.moviedetails img {
+.seriesdetails img {
   margin: 1rem;
   border-radius: 1.2rem;
   border: 1px solid #cab9b9;
@@ -81,18 +81,18 @@ hr {
   filter: drop-shadow(4px 5px 8px rgba(0, 0, 0, 0.25));
 }
 
-.movielike-container {
+.serieslike-container {
   margin: 20px 0;
 }
 
 @media only screen and (min-width: 576px) and (max-width: 991px) {
-  .moviedetails {
+  .seriesdetails {
     width: 90vw;
     margin: 0 auto;
     font-size: 1.7rem;
   }
 
-  .moviedetails .mainImg {
+  .seriesdetails .mainImg {
     width: 300px;
   }
 
@@ -120,12 +120,12 @@ hr {
 }
 
 @media only screen and (min-width: 992px) {
-  .moviedetails {
+  .seriesdetails {
     margin: 0 auto;
     font-size: 1.7rem;
   }
 
-  .moviedetails .mainImg {
+  .seriesdetails .mainImg {
     width: 300px;
   }
 
@@ -161,7 +161,7 @@ hr {
 }
 
 @media only screen and (min-width: 1200px) {
-  .moviedetails {
+  .seriesdetails {
     width: 85vw;
   }
 
