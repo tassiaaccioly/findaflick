@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+import "./MoviesList.css";
+
 function MoviesList(props) {
   const [list, setList] = useState([
     {
@@ -50,9 +52,9 @@ function MoviesList(props) {
   console.log(page);
 
   return (
-    <div>
+    <div className="movies-list">
       {list.map((movie) => (
-        <div key={movie.id}>
+        <div className="movielist-item" key={movie.id}>
           <img
             src={
               movie.poster_path
@@ -61,39 +63,54 @@ function MoviesList(props) {
             }
             alt="Poster"
           />
-          <div>
+          <div className="movielist-info">
             <h3>
-              {movie.name || movie.title
-                ? `${movie.name || movie.title}`
-                : movie.original_title}{" "}
-              | Score {movie.vote_average}
+              <span>
+                {movie.name || movie.title
+                  ? `${movie.name || movie.title}`
+                  : movie.original_title}{" "}
+              </span>{" "}
+              | {movie.vote_average} ★
             </h3>
             <hr />
             <p>{movie.overview}</p>
-
-            <Link to={`/movies/${movie.id}`}>See Details</Link>
+            <div className="moviebutton-container">
+              <Link className="movieitem-button" to={`/movies/${movie.id}`}>
+                See Details
+              </Link>
+            </div>
           </div>
         </div>
       ))}
       {page.page === page.total_pages && page.page === 1 ? (
-        <div>
-          <p>Page {page.page}</p>
+        <div className="button-container-flex">
+          <p>{page.page}</p>
         </div>
       ) : page.page === 1 ? (
-        <div>
-          <p>Page {page.page}</p>
-          <Link to={`/movies/page${next}`}> Next Page</Link>
+        <div className="button-container-flex">
+          <p>{page.page}</p>
+          <Link className="page-button" to={`/movies/page${next}`}>
+            {" "}
+            →
+          </Link>
         </div>
       ) : page.page === page.total_pages ? (
-        <div>
-          <p>Page {page.page}</p>
-          <Link to={`/movies/page${previous}`}>Previous Page</Link>
+        <div className="button-container-flex">
+          <p>{page.page}</p>
+          <Link className="page-button" to={`/movies/page${previous}`}>
+            ←
+          </Link>
         </div>
       ) : (
-        <div>
-          <Link to={`/movies/page${previous}`}>Previous Page</Link>
-          <p>Page {page.page}</p>
-          <Link to={`/movies/page${next}`}> Next Page</Link>
+        <div className="button-container-flex">
+          <Link className="page-button" to={`/movies/page${previous}`}>
+            ←
+          </Link>
+          <p>{page.page}</p>
+          <Link className="page-button" to={`/movies/page${next}`}>
+            {" "}
+            →
+          </Link>
         </div>
       )}
     </div>

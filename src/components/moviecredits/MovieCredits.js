@@ -48,7 +48,11 @@ function MovieCredits(props) {
         {directors.map((elem) => (
           <div className="directors" key={elem.id}>
             <img
-              src={`http://image.tmdb.org/t/p/w92/${elem.profile_path}`}
+              src={
+                elem.profile_path
+                  ? `http://image.tmdb.org/t/p/w92/${elem.profile_path}`
+                  : "https://lh3.googleusercontent.com/proxy/xrBBdsANHj680trkPaXyeHO1BeIvIU2tx-bXDDiF0bPQfR7s_idolq9Ak4lG2aJXRZgshCy6GqzPFiorTvECoYmaklRuNu8ml0JHG6tgXgBIzUu4A2JK26pTEgxdogvapz8"
+              }
               alt={`${elem.name}`}
             />
             <p>

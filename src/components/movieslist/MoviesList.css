@@ -1,0 +1,148 @@
+.movies-list {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  font-size: 1.6rem;
+}
+
+.movielist-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.movielist-item img {
+  width: 189px;
+  height: 282px;
+  border-radius: 12px;
+  border: 2px solid #cab9b9;
+  margin-bottom: 15px;
+}
+
+.movielist-info h3 {
+  font-size: 1.7rem;
+}
+
+.movielist-info span {
+  color: #b00000;
+}
+
+.movielist-info p {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  max-height: 170px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  margin: 5px 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.moviebutton-container {
+  display: flex;
+  justify-content: center;
+}
+
+.movieitem-button {
+  background-color: #b00000;
+  border-radius: 8px;
+
+  padding: 3px 10px;
+  margin: 10px 0;
+}
+
+.button-container-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.page-button {
+  background-color: #b00000;
+  border-radius: 8px;
+
+  padding: 2px 4px;
+  margin: 10px 15px;
+
+  line-height: 1;
+}
+
+@media only screen and (min-width: 576px) {
+  .movielist-item {
+    flex-direction: row;
+  }
+
+  .movielist-info {
+    width: 55vw;
+    margin-left: 40px;
+  }
+
+  .movielist-info hr {
+    width: 55vw;
+  }
+
+  .movielist-info p {
+    margin: 15px 0;
+  }
+
+  .moviebutton-container {
+    margin: 15px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .movies-list {
+    width: 95vw;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-size: 1.4rem;
+    margin: 30px auto;
+  }
+
+  .movielist-item {
+    margin-right: 40px;
+  }
+
+  .movielist-item img {
+    width: 160px;
+    height: auto;
+  }
+
+  .movielist-info {
+    width: 25vw;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+  }
+
+  .movielist-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .movielist-info hr {
+    width: 25vw;
+  }
+
+  .movielist-info p {
+    max-height: 150px;
+    min-height: 130px;
+  }
+
+  .movieitem-button {
+    margin: 5px 0;
+  }
+
+  .button-container-flex {
+    font-size: 2rem;
+    margin: 0 auto;
+  }
+}

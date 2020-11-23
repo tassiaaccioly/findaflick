@@ -3,6 +3,7 @@ import axios from "axios";
 
 import MoviesLike from "../movieslike/MoviesLike";
 import MovieCredits from "../moviecredits/MovieCredits";
+import YoutubePlayer from "../youtubeplayer/YoutubePlayer";
 import "./MovieDetail.css";
 
 import getRuntime from "../functions/getRuntime";
@@ -39,6 +40,8 @@ function MovieDetail(props) {
     fetchData();
   }, [props]);
 
+  let year = getYear(movie.release_date);
+
   return (
     <div className="moviedetails">
       <div className="flex">
@@ -54,7 +57,7 @@ function MovieDetail(props) {
                 ? `${movie.name || movie.title}`
                 : movie.original_title}{" "}
             </span>
-            | {getYear(movie.release_date)}
+            | {year}
           </h3>
           <hr />
           <p className="runtime">{getRuntime(movie.runtime)}</p>
@@ -81,6 +84,14 @@ function MovieDetail(props) {
       <div className="movielike-container">
         <h5>Find Similar Movies</h5>
         <MoviesLike id={movie.id} />
+      </div>
+      <div>
+        <YoutubePlayer
+          year={year}
+          original_title={movie.original_title}
+          title={movie.title}
+          name={movie.name}
+        />
       </div>
     </div>
   );
