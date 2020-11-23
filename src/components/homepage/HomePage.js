@@ -3,42 +3,49 @@ import React, { useState } from "react";
 import SearchBarMovies from "../searchbarmovies/SearchBarMovies";
 import SearchBarSeries from "../searchbarseries/SearchBarSeries";
 
-function HomePage() {
-  const [state, setState] = useState({
+import "./HomePage.css";
+
+function HomePage(props) {
+  const [movies, setMovies] = useState({
     clickMovies: false,
+  });
+
+  const [series, setSeries] = useState({
     clickSeries: false,
   });
 
-  function handleClick(event) {
-    setState({
-      ...state,
-      [event.currentTarget.name]: !state.currentTarget.name,
+  function handleClickMovies() {
+    setMovies({
+      ...movies,
+      clickMovies: !movies.clickMovies,
+    });
+  }
+
+  function handleClickSeries() {
+    setSeries({
+      ...series,
+      clickSeries: !series.clickSeries,
     });
   }
 
   return (
-    <div>
+    <div className="homepage-container">
       <h1>Find a Flick</h1>
       <p>What flick do you wanna find today?</p>
-      <div>
-        {state.clickMovies ? (
-          <SearchBarMovies />
-        ) : state.clickSeries ? (
+      <div className="switch-searchbar">
+        {movies.clickMovies ? (
+          <SearchBarMovies
+            searchMovie={props.searchMovie}
+            setSearchMovie={props.setSearchMovie}
+          />
+        ) : series.clickSeries ? (
           <SearchBarSeries />
         ) : (
-          <div>
-            <button
-              className="mainBtn"
-              onClick={handleClick}
-              name="clickSeries"
-            >
+          <div className="mainBtn-container">
+            <button className="mainBtn" onClick={handleClickSeries}>
               Series
             </button>
-            <button
-              className="mainBtn"
-              onClick={handleClick}
-              name="clickMovies"
-            >
+            <button className="mainBtn" onClick={handleClickMovies}>
               Movies
             </button>
           </div>

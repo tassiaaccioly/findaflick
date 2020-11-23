@@ -4,7 +4,6 @@ import axios from "axios";
 import MoviesLike from "../movieslike/MoviesLike";
 import MovieCredits from "../moviecredits/MovieCredits";
 import YoutubePlayer from "../youtubeplayer/YoutubePlayer";
-import "./MovieDetail.css";
 
 import getRuntime from "../functions/getRuntime";
 import getYear from "../functions/getYear";

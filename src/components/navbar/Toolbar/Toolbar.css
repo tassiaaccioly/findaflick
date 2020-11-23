@@ -31,10 +31,6 @@
   flex: 1;
 }
 
-.toolbar_navigation-items {
-  display: none;
-}
-
 .toolbar_navigation-items ul {
   font-size: 1.7rem;
   list-style: none;
@@ -54,7 +50,13 @@
 
 .toolbar_navigation-items a:hover,
 .toolbar_navigation-items a:active {
-  color: black;
+  color: #231e1e;
+}
+
+@media (max-width: 768px) {
+  .toolbar_navigation-items {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 576px) {

@@ -9,7 +9,7 @@ function Toolbar(props) {
     <header className="toolbar">
       <nav className="toolbar__navigation">
         <Link className="toolbar__logo" to="/">
-          <img src="./images/favicon.svg" />
+          {/* <img src="./images/favicon.svg" /> */}
           <h1>Find a Flick</h1>
         </Link>
         <div className="spacer" />
@@ -24,12 +24,12 @@ function Toolbar(props) {
             <li>
               <Link to="/random">Random</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/">Movies</Link>
             </li>
             <li>
               <Link to="/">Series</Link>
-            </li> */}
+            </li>
             <li>
               <Link to="/">Search</Link>
             </li>
