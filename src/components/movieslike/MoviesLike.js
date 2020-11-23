@@ -26,6 +26,10 @@ function MoviesLike(props) {
     fetchData();
   }, [props]);
 
+  function reloadPage() {
+    return window.location.reload(false);
+  }
+
   return (
     <div className="scroll-container01">
       {movieLike.slice(0, 10).map((movie) => (

@@ -9,12 +9,15 @@ function YoutubePlayer(props) {
   let searchTerm;
 
   const normalizeSearchTerm = () => {
-    if (props.original_title) {
-      return (searchTerm = props.original_title.split(" ").join("%20"));
-    } else if (props.name) {
+    if (props.name) {
       return (searchTerm = props.name.toLowerCase().split(" ").join("%20"));
     } else if (props.title) {
       return (searchTerm = props.title.toLowerCase().split(" ").join("%20"));
+    } else if (props.original_title) {
+      return (searchTerm = props.original_title
+        .toLowerCase()
+        .split(" ")
+        .join("%20"));
     }
   };
 
@@ -24,7 +27,7 @@ function YoutubePlayer(props) {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=AIzaSyDonqhSsm00YnVH55MS42d_TYKm_cJM3fk`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=${process.env.REACT_APP_YOUTUBEAPI_KEY}`
         );
         console.log(response);
 
@@ -36,12 +39,14 @@ function YoutubePlayer(props) {
 
   console.log(searchTerm);
 
+  let videoId = `${video}`;
+
   return (
     <div className="responsive-video">
       {searchTerm !== undefined ? (
         <iframe
           className="video-frame"
-          src={`//www.youtube.com/embed/${video}?rel=0&html5=1&vq=hd720&modestbranding=1`}
+          src={`//www.youtube.com/embed/${videoId}?rel=0&html5=1&vq=hd720&modestbranding=1`}
           frameBorder="0"
           allowFullScreen
         ></iframe>

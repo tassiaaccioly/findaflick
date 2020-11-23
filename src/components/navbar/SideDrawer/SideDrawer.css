@@ -25,7 +25,7 @@
 }
 
 .side-drawer li {
-  margin: 0.5rem 0;
+  margin: 0.8rem 0;
 }
 
 .side-drawer a {
@@ -33,7 +33,7 @@
   text-decoration: none;
   font-size: 19px;
   font-weight: 700;
-  line-height: 3.5rem;
+  line-height: 4.2rem;
 }
 
 .side-drawer a:hover,
