@@ -45,6 +45,7 @@ function YoutubePlayer(props) {
 
   return (
     <div className="responsive-video">
+      <h3>Trailer</h3>
       {video ? (
         <iframe
           title={searchTerm}

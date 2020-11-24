@@ -6,8 +6,20 @@ function SearchBarSeries(props) {
     props.setSearchSeries(event.currentTarget.value);
   }
 
+  function onKeyDown(event) {
+    if (event.key === "Enter") {
+      handleSubmit(event);
+    }
+    return;
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    props.history.push("/series/page1");
+  }
+
   return (
-    <div className="searchbar-container">
+    <form onSubmit={handleSubmit} className="searchbar-container">
       <div className="searchbar">
         <input
           type="text"
@@ -17,14 +29,15 @@ function SearchBarSeries(props) {
           placeholder="Find your Flick"
           onChange={handleChange}
           value={props.searchSeries}
+          onKeyDown={onKeyDown}
         ></input>
       </div>
       <div className="secondaryBtn-container">
-        <Link to="/series/page1">
-          <button className="secondaryBtn">Search</button>
-        </Link>
+        <button className="secondaryBtn" type="submit">
+          Search
+        </button>
       </div>
-    </div>
+    </form>
   );
 }
 

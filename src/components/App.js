@@ -71,7 +71,9 @@ function App() {
             />
             <Route path="/recomendations" component={Recomendations} />
             <Route path="/about" component={About} />
-            <Route path="/spotify" component={SpotifyPlayer} />
+            <Route path="/spotify">
+              <SpotifyPlayer props={"shakira"} />
+            </Route>
           </Switch>
         </main>
       </BrowserRouter>

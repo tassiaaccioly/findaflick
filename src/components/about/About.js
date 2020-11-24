@@ -14,7 +14,6 @@ function About() {
       <div className="profile-container">
         <div className="infos-container">
           <h4>Tassia Accioly</h4>
-          <hr />
           <p>
             Tassia is a Web Dev student at Ironhack, a previous movie industry
             worker and movie enthusiast and gamer on her off hours.
@@ -36,7 +35,6 @@ function About() {
         </div>
         <div className="infos-container">
           <h4>Denis Mota</h4>
-          <hr />
           <p>
             The most recent Ironhacker, my name is Denis and I am passionate
             about travel & programing.
@@ -56,27 +54,31 @@ function About() {
       </div>
 
       <div className="credits-container">
-        <h2>Used API`s</h2>
+        <h1>Used API`s</h1>
         <hr />
-        <div>
-          <a href="https://www.themoviedb.org/documentation/api?language=pt-BR">
-            <img
-              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
-              alt="TMDB Logo"
-            />
-          </a>
-          <h4>The Movie Database</h4>
+        <div className="apicredits-container">
+          <div className="api-container">
+            <a href="https://www.themoviedb.org/documentation/api?language=pt-BR">
+              <img
+                src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg"
+                alt="TMDB Logo"
+              />
+            </a>
+            <h4>The Movie Database</h4>
+          </div>
+          <div className="api-container">
+            <a href="https://developers.google.com/youtube?hl=en">
+              <img src="./images/youtube.png" alt="Youtube Logo" />
+            </a>
+            <h4>Youtube</h4>
+          </div>
+          <div className="api-container">
+            <a href="https://developer.spotify.com/">
+              <img src="./images/spotify.png" alt="Spotify Logo" />
+            </a>
+            <h4>Spotify</h4>
+          </div>
         </div>
-        <div>
-          <a href="https://developers.google.com/youtube?hl=en">
-            <img src="./images/youtube.png" alt="Youtube Logo" />
-          </a>
-          <h4>Youtube</h4>
-        </div>
-        <a href="https://developer.spotify.com/">
-          <img src="./images/spotify.png" alt="Spotify Logo" />
-        </a>
-        <h4>Spotify</h4>
       </div>
     </div>
   );

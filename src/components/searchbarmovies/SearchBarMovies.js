@@ -6,10 +6,7 @@ import "./SearchBarMovies.css";
 function SearchBarMovies(props) {
   function handleChange(event) {
     props.setSearchMovie(event.currentTarget.value);
-    console.log(event.currentTarget.value);
   }
-
-  let btn;
 
   function onKeyDown(event) {
     if (event.key === "Enter") {

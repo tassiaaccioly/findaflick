@@ -43,6 +43,7 @@ function HomePage(props) {
           <SearchBarSeries
             searchSeries={props.searchSeries}
             setSearchSeries={props.setSearchSeries}
+            history={props.history}
           />
         ) : (
           <div className="mainBtn-container">
