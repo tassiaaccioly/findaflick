@@ -85,6 +85,13 @@ hr {
   margin: 20px 0;
 }
 
+.media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 @media only screen and (min-width: 576px) and (max-width: 991px) {
   .moviedetails {
     width: 90vw;
@@ -116,6 +123,13 @@ hr {
 
   .tagline {
     font-size: 1.8rem;
+  }
+
+  .media-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -158,6 +172,13 @@ hr {
   .data {
     margin: 40px 0 0;
   }
+
+  .media-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -185,5 +206,12 @@ hr {
     font-size: 2rem;
     padding: 7px 15px;
     margin: 10px 0;
+  }
+
+  .media-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
   }
 }

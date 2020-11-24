@@ -11,6 +11,8 @@ import TopRated from "./toprated/TopRated";
 import TopMovies from "./topmovies/TopMovies";
 import TopSeries from "./topseries/TopSeries";
 import Recomendations from "./recomendations/Recomendations";
+import About from "./about/About";
+import SpotifyPlayer from "./spotifyplayer/SpotifyPlayer";
 import "./App.css";
 
 function App() {
@@ -23,14 +25,21 @@ function App() {
         <NavBar />
         <main style={{ marginTop: "70px" }}>
           <Switch>
-            <Route exact path="/">
-              <HomePage
-                searchMovie={searchMovie}
-                setSearchMovie={setSearchMovie}
-                searchSeries={searchSeries}
-                setSearchSeries={setSearchSeries}
-              />
-            </Route>
+            <Route
+              exact
+              path="/"
+              render={(routeProps) => {
+                return (
+                  <HomePage
+                    {...routeProps}
+                    searchMovie={searchMovie}
+                    setSearchMovie={setSearchMovie}
+                    searchSeries={searchSeries}
+                    setSearchSeries={setSearchSeries}
+                  />
+                );
+              }}
+            />
             <Route
               exact
               path="/movies/page:num"
@@ -61,6 +70,10 @@ function App() {
               component={TopSeries}
             />
             <Route path="/recomendations" component={Recomendations} />
+            <Route path="/about" component={About} />
+            <Route path="/spotify">
+              <SpotifyPlayer props={"shakira"} />
+            </Route>
           </Switch>
         </main>
       </BrowserRouter>

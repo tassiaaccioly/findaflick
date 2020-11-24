@@ -26,11 +26,14 @@ function YoutubePlayer(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=${process.env.REACT_APP_YOUTUBEAPI_KEY}`
-        );
+        if (searchTerm) {
+          const response = await axios.get(
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=${process.env.REACT_APP_YOUTUBEAPI_KEY}`
+          );
 
-        setVideo(response.data.items[0].id.videoId);
+          console.log(searchTerm);
+          setVideo(response.data.items[0].id.videoId);
+        }
       } catch (err) {}
     };
     fetchData();
@@ -38,13 +41,16 @@ function YoutubePlayer(props) {
 
   let videoId = `${video}`;
 
+  console.log(videoId);
+
   return (
     <div className="responsive-video">
-      {searchTerm !== undefined ? (
+      <h3>Trailer</h3>
+      {video ? (
         <iframe
           title={searchTerm}
           className="video-frame"
-          src={`//www.youtube.com/embed/${videoId}?rel=0&html5=1&vq=hd720&modestbranding=1`}
+          src={`https://www.youtube.com/embed/${videoId}?rel=0&html5=1&vq=hd720&modestbranding=1`}
           frameBorder="0"
           allowFullScreen
         ></iframe>

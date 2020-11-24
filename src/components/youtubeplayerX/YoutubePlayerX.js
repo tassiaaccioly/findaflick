@@ -38,7 +38,7 @@ function YoutubePlayerX(props) {
 
   return (
     <div className="responsive-video">
-      {searchTerm !== undefined ? (
+      {video ? (
         <iframe
           title={searchTerm}
           className="video-frame"

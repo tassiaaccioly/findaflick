@@ -4,6 +4,7 @@ import axios from "axios";
 import MoviesLike from "../movieslike/MoviesLike";
 import MovieCredits from "../moviecredits/MovieCredits";
 import YoutubePlayer from "../youtubeplayer/YoutubePlayer";
+import SpotifyPlayer from "../spotifyplayer/SpotifyPlayer";
 
 import getRuntime from "../functions/getRuntime";
 import getYear from "../functions/getYear";
@@ -88,8 +89,14 @@ function MovieDetail(props) {
         <h5>Find Similar Movies</h5>
         <MoviesLike id={movie.id} />
       </div>
-      <div>
+      <div className="media-container">
         <YoutubePlayer
+          year={year}
+          original_title={movie.original_title}
+          title={movie.title}
+          name={movie.name}
+        />
+        <SpotifyPlayer
           year={year}
           original_title={movie.original_title}
           title={movie.title}

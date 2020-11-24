@@ -37,11 +37,13 @@ function HomePage(props) {
           <SearchBarMovies
             searchMovie={props.searchMovie}
             setSearchMovie={props.setSearchMovie}
+            history={props.history}
           />
         ) : series.clickSeries ? (
           <SearchBarSeries
             searchSeries={props.searchSeries}
             setSearchSeries={props.setSearchSeries}
+            history={props.history}
           />
         ) : (
           <div className="mainBtn-container">
