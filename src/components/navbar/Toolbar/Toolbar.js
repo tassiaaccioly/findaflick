@@ -19,22 +19,16 @@ function Toolbar(props) {
         <div className="toolbar_navigation-items">
           <ul>
             <li>
-              <Link to="/best">Best 100</Link>
+              <Link to="/toprated">Top Rated</Link>
             </li>
             <li>
-              <Link to="/random">Random</Link>
-            </li>
-            <li>
-              <Link to="/">Movies</Link>
-            </li>
-            <li>
-              <Link to="/">Series</Link>
+              <Link to="/recomendation">Recomendation</Link>
             </li>
             <li>
               <Link to="/">Search</Link>
             </li>
             <li>
-              <Link to="/">About</Link>
+              <Link to="/about">About</Link>
             </li>
           </ul>
         </div>

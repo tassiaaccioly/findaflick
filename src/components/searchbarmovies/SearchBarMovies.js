@@ -12,7 +12,6 @@ function SearchBarMovies(props) {
   return (
     <div className="searchbar-container">
       <div className="searchbar">
-        <img src="./images/favicon.svg" alt="search" />
         <input
           type="text"
           className="searchInput"
@@ -27,7 +26,6 @@ function SearchBarMovies(props) {
         <Link to="/movies/page1">
           <button className="secondaryBtn">Search</button>
         </Link>
-        <button className="secondaryBtn">Random</button>
       </div>
     </div>
   );

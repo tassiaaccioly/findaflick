@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import "./SeriesList.css";
+import "./TopMovies.css";
 
-function SeriesList(props) {
+function TopMovies(props) {
   const [list, setList] = useState([
     {
       original_title: "",
@@ -23,17 +23,6 @@ function SeriesList(props) {
     total_results: 0,
   });
 
-  let seriesinput = "friends";
-
-  console.log(props.searchSeries);
-
-  function normalizeInput() {
-    seriesinput = props.searchSeries.toLowerCase().split(" ").join("%20");
-    return;
-  }
-
-  normalizeInput();
-
   let number;
 
   number = props.match.params.num;
@@ -43,8 +32,10 @@ function SeriesList(props) {
       try {
         number = props.match.params.num;
 
+        console.log(typeof number);
+
         const response = await axios.get(
-          `https://api.themoviedb.org/3/search/tv?api_key=4afee1c44582b308becde04cf925a9c5&language=en-US&page=${number}&query=${seriesinput}&include_adult=false`
+          `https://api.themoviedb.org/3/movie/top_rated?api_key=4afee1c44582b308becde04cf925a9c5&language=en-US&page=${number}`
         );
 
         console.log(response);
@@ -63,30 +54,30 @@ function SeriesList(props) {
   console.log(page);
 
   return (
-    <div className="series-list">
-      {list.map((series) => (
-        <div className="serieslist-item" key={series.id}>
+    <div className="movies-list">
+      {list.map((movie) => (
+        <div className="movielist-item" key={movie.id}>
           <img
             src={
-              series.poster_path
-                ? `http://image.tmdb.org/t/p/w185/${series.poster_path}`
+              movie.poster_path
+                ? `http://image.tmdb.org/t/p/w185/${movie.poster_path}`
                 : "https://sd.keepcalms.com/i/keep-calm-poster-not-found.png"
             }
             alt="Poster"
           />
-          <div className="serieslist-info">
+          <div className="movielist-info">
             <h3>
               <span>
-                {series.name || series.title
-                  ? `${series.name || series.title}`
-                  : series.original_title}{" "}
+                {movie.name || movie.title
+                  ? `${movie.name || movie.title}`
+                  : movie.original_title}{" "}
               </span>{" "}
-              | {series.vote_average} ★
+              | {movie.vote_average} ★
             </h3>
             <hr />
-            <p>{series.overview}</p>
-            <div className="seriesbutton-container">
-              <Link className="seriesitem-button" to={`/series/${series.id}`}>
+            <p>{movie.overview}</p>
+            <div className="moviebutton-container">
+              <Link className="movieitem-button" to={`/movies/${movie.id}`}>
                 See Details
               </Link>
             </div>
@@ -100,7 +91,7 @@ function SeriesList(props) {
       ) : page.page === 1 ? (
         <div className="button-container-flex">
           <p>{page.page}</p>
-          <Link className="page-button" to={`/series/page${next}`}>
+          <Link className="page-button" to={`/movies/toprated/page${next}`}>
             {" "}
             →
           </Link>
@@ -108,17 +99,17 @@ function SeriesList(props) {
       ) : page.page === page.total_pages ? (
         <div className="button-container-flex">
           <p>{page.page}</p>
-          <Link className="page-button" to={`/series/page${previous}`}>
+          <Link className="page-button" to={`/movies/toprated/page${previous}`}>
             ←
           </Link>
         </div>
       ) : (
         <div className="button-container-flex">
-          <Link className="page-button" to={`/series/page${previous}`}>
+          <Link className="page-button" to={`/movies/toprated/page${previous}`}>
             ←
           </Link>
           <p>{page.page}</p>
-          <Link className="page-button" to={`/series/page${next}`}>
+          <Link className="page-button" to={`/movies/toprated/page${next}`}>
             {" "}
             →
           </Link>
@@ -128,4 +119,4 @@ function SeriesList(props) {
   );
 }
 
-export default SeriesList;
+export default TopMovies;

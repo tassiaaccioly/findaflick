@@ -73,7 +73,7 @@ function SeriesCredits(props) {
               src={
                 actor.profile_path
                   ? `http://image.tmdb.org/t/p/w92/${actor.profile_path}`
-                  : "hhttps://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png"
+                  : "https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png"
               }
               alt={`${actor.name}`}
             />

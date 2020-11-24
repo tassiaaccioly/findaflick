@@ -7,10 +7,14 @@ import MovieDetail from "./moviedetail/MovieDetail";
 import MoviesList from "./movieslist/MoviesList";
 import SeriesList from "./serieslist/SeriesList";
 import SeriesDetail from "./seriesdetail/SeriesDetail";
+import TopRated from "./toprated/TopRated";
+import TopMovies from "./topmovies/TopMovies";
+import TopSeries from "./topseries/TopSeries";
 import "./App.css";
 
 function App() {
   const [searchMovie, setSearchMovie] = useState("");
+  const [searchSeries, setSearchSeries] = useState("");
 
   return (
     <div className="App">
@@ -22,6 +26,8 @@ function App() {
               <HomePage
                 searchMovie={searchMovie}
                 setSearchMovie={setSearchMovie}
+                searchSeries={searchSeries}
+                setSearchSeries={setSearchSeries}
               />
             </Route>
             <Route
@@ -32,8 +38,27 @@ function App() {
               }}
             />
             <Route exact path="/movies/:id" component={MovieDetail} />
-            <Route exact path="/series/page:num" component={SeriesList} />
+            <Route
+              exact
+              path="/series/page:num"
+              render={(routeProps) => {
+                return (
+                  <SeriesList {...routeProps} searchSeries={searchSeries} />
+                );
+              }}
+            />
             <Route exact path="/series/:id" component={SeriesDetail} />
+            <Route exact path="/toprated" component={TopRated} />
+            <Route
+              exact
+              path="/movies/toprated/page:num"
+              component={TopMovies}
+            />
+            <Route
+              exact
+              path="/series/toprated/page:num"
+              component={TopSeries}
+            />
           </Switch>
         </main>
       </BrowserRouter>
