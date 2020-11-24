@@ -4,6 +4,7 @@ import axios from "axios";
 import SeriesLike from "../serieslike/SeriesLike";
 import SeriesCredits from "../seriescredits/SeriesCredits";
 import YoutubePlayerX from "../youtubeplayerX/YoutubePlayerX";
+import SpotifyPlayerX from "../spotifyplayer/SpotifyPlayerX";
 
 import getYear from "../functions/getYear";
 
@@ -97,8 +98,13 @@ function SeriesDetail(props) {
         <h5>Find Similar Series</h5>
         <SeriesLike id={series.id} />
       </div>
-      <div>
+      <div className="media-container">
         <YoutubePlayerX
+          year={year}
+          original_name={series.original_name}
+          name={series.name}
+        />
+        <SpotifyPlayerX
           year={year}
           original_name={series.original_name}
           name={series.name}
