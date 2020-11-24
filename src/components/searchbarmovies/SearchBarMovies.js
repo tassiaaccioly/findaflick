@@ -9,6 +9,19 @@ function SearchBarMovies(props) {
     console.log(event.currentTarget.value);
   }
 
+  let btn;
+
+  function onKeyDown(event) {
+    if (event.key === "Enter") {
+      btn.click();
+    }
+    return;
+  }
+
+  function handleClick(event) {
+    event.preventDefault();
+  }
+
   return (
     <div className="searchbar-container">
       <div className="searchbar">
@@ -20,12 +33,18 @@ function SearchBarMovies(props) {
           placeholder="Find your Flick"
           onChange={handleChange}
           value={props.searchMovie}
+          onKeyDown={onKeyDown}
         ></input>
       </div>
       <div className="secondaryBtn-container">
-        <Link to="/movies/page1">
-          <button className="secondaryBtn">Search</button>
-        </Link>
+        <button
+          className="secondaryBtn"
+          ref={(node) => (btn = node)}
+          type="submit"
+          onClick={handleClick}
+        >
+          <Link to="/movies/page1">Search</Link>
+        </button>
       </div>
     </div>
   );

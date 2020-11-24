@@ -10,6 +10,7 @@ import SeriesDetail from "./seriesdetail/SeriesDetail";
 import TopRated from "./toprated/TopRated";
 import TopMovies from "./topmovies/TopMovies";
 import TopSeries from "./topseries/TopSeries";
+import Recomendations from "./recomendations/Recomendations";
 import "./App.css";
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
               path="/series/toprated/page:num"
               component={TopSeries}
             />
+            <Route path="/recomendations" component={Recomendations} />
           </Switch>
         </main>
       </BrowserRouter>

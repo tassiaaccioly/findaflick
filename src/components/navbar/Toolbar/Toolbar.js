@@ -22,7 +22,7 @@ function Toolbar(props) {
               <Link to="/toprated">Top Rated</Link>
             </li>
             <li>
-              <Link to="/recomendation">Recomendation</Link>
+              <Link to="/recomendations">Recomendation</Link>
             </li>
             <li>
               <Link to="/">Search</Link>

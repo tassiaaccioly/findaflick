@@ -28,19 +28,11 @@ function YoutubePlayerX(props) {
           `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20series%20trailer%20${props.year}&key=${process.env.REACT_APP_YOUTUBEAPI_KEY}`
         );
 
-        console.log(response);
-
-        console.log(props.year);
-
         setVideo(response.data.items[0].id.videoId);
       } catch (err) {}
     };
     fetchData();
-  }, [props]);
-
-  console.log(props.year);
-
-  console.log(searchTerm);
+  }, [props, searchTerm]);
 
   let videoId = `${video}`;
 
@@ -48,6 +40,7 @@ function YoutubePlayerX(props) {
     <div className="responsive-video">
       {searchTerm !== undefined ? (
         <iframe
+          title={searchTerm}
           className="video-frame"
           src={`//www.youtube.com/embed/${videoId}`}
           frameBorder="0"
