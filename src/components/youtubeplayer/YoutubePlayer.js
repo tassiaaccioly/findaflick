@@ -29,15 +29,12 @@ function YoutubePlayer(props) {
         const response = await axios.get(
           `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=${process.env.REACT_APP_YOUTUBEAPI_KEY}`
         );
-        console.log(response);
 
         setVideo(response.data.items[0].id.videoId);
       } catch (err) {}
     };
     fetchData();
-  }, [props]);
-
-  console.log(searchTerm);
+  }, [props, searchTerm]);
 
   let videoId = `${video}`;
 
@@ -45,6 +42,7 @@ function YoutubePlayer(props) {
     <div className="responsive-video">
       {searchTerm !== undefined ? (
         <iframe
+          title={searchTerm}
           className="video-frame"
           src={`//www.youtube.com/embed/${videoId}?rel=0&html5=1&vq=hd720&modestbranding=1`}
           frameBorder="0"
