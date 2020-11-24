@@ -13,17 +13,18 @@ function SearchBarMovies(props) {
 
   function onKeyDown(event) {
     if (event.key === "Enter") {
-      btn.click();
+      handleSubmit(event);
     }
     return;
   }
 
-  function handleClick(event) {
+  function handleSubmit(event) {
     event.preventDefault();
+    props.history.push("/movies/page1");
   }
 
   return (
-    <div className="searchbar-container">
+    <form onSubmit={handleSubmit} className="searchbar-container">
       <div className="searchbar">
         <input
           type="text"
@@ -37,16 +38,11 @@ function SearchBarMovies(props) {
         ></input>
       </div>
       <div className="secondaryBtn-container">
-        <button
-          className="secondaryBtn"
-          ref={(node) => (btn = node)}
-          type="submit"
-          onClick={handleClick}
-        >
-          <Link to="/movies/page1">Search</Link>
+        <button className="secondaryBtn" type="submit">
+          Search
         </button>
       </div>
-    </div>
+    </form>
   );
 }
 

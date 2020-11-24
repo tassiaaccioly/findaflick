@@ -37,6 +37,7 @@ function HomePage(props) {
           <SearchBarMovies
             searchMovie={props.searchMovie}
             setSearchMovie={props.setSearchMovie}
+            history={props.history}
           />
         ) : series.clickSeries ? (
           <SearchBarSeries
