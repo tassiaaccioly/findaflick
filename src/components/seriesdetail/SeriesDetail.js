@@ -48,14 +48,16 @@ function SeriesDetail(props) {
 
   let year = getYear(series.first_air_date);
 
-  console.log(year);
-
   return (
     <div className="seriesdetails">
       <div className="flex">
         <img
           className="mainImg"
-          src={`http://image.tmdb.org/t/p/w342/${series.poster_path}`}
+          src={
+            series.poster_path
+              ? `http://image.tmdb.org/t/p/w342/${series.poster_path}`
+              : "https://sd.keepcalms.com/i/keep-calm-poster-not-found.png"
+          }
           alt="Poster"
         />
         <div className="infos">

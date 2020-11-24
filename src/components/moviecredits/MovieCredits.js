@@ -51,7 +51,7 @@ function MovieCredits(props) {
               src={
                 elem.profile_path
                   ? `http://image.tmdb.org/t/p/w92/${elem.profile_path}`
-                  : "https://lh3.googleusercontent.com/proxy/xrBBdsANHj680trkPaXyeHO1BeIvIU2tx-bXDDiF0bPQfR7s_idolq9Ak4lG2aJXRZgshCy6GqzPFiorTvECoYmaklRuNu8ml0JHG6tgXgBIzUu4A2JK26pTEgxdogvapz8"
+                  : "https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png"
               }
               alt={`${elem.name}`}
             />
@@ -71,7 +71,7 @@ function MovieCredits(props) {
               src={
                 actor.profile_path
                   ? `http://image.tmdb.org/t/p/w92/${actor.profile_path}`
-                  : "https://lh3.googleusercontent.com/proxy/xrBBdsANHj680trkPaXyeHO1BeIvIU2tx-bXDDiF0bPQfR7s_idolq9Ak4lG2aJXRZgshCy6GqzPFiorTvECoYmaklRuNu8ml0JHG6tgXgBIzUu4A2JK26pTEgxdogvapz8"
+                  : "https://westsiderc.org/wp-content/uploads/2019/08/Image-Not-Available.png"
               }
               alt={`${actor.name}`}
             />

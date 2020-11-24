@@ -39,7 +39,10 @@ function HomePage(props) {
             setSearchMovie={props.setSearchMovie}
           />
         ) : series.clickSeries ? (
-          <SearchBarSeries />
+          <SearchBarSeries
+            searchSeries={props.searchSeries}
+            setSearchSeries={props.setSearchSeries}
+          />
         ) : (
           <div className="mainBtn-container">
             <button className="mainBtn" onClick={handleClickSeries}>

@@ -46,7 +46,11 @@ function MovieDetail(props) {
       <div className="flex">
         <img
           className="mainImg"
-          src={`http://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+          src={
+            movie.poster_path
+              ? `http://image.tmdb.org/t/p/w342/${movie.poster_path}`
+              : "https://sd.keepcalms.com/i/keep-calm-poster-not-found.png"
+          }
           alt="Poster"
         />
         <div className="infos">

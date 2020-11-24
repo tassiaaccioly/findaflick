@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import "./SeriesList.css";
+import "./TopSeries.css";
 
-function SeriesList(props) {
+function TopSeries(props) {
   const [list, setList] = useState([
     {
       original_title: "",
@@ -23,17 +23,6 @@ function SeriesList(props) {
     total_results: 0,
   });
 
-  let seriesinput = "friends";
-
-  console.log(props.searchSeries);
-
-  function normalizeInput() {
-    seriesinput = props.searchSeries.toLowerCase().split(" ").join("%20");
-    return;
-  }
-
-  normalizeInput();
-
   let number;
 
   number = props.match.params.num;
@@ -44,7 +33,7 @@ function SeriesList(props) {
         number = props.match.params.num;
 
         const response = await axios.get(
-          `https://api.themoviedb.org/3/search/tv?api_key=4afee1c44582b308becde04cf925a9c5&language=en-US&page=${number}&query=${seriesinput}&include_adult=false`
+          `https://api.themoviedb.org/3/tv/top_rated?api_key=4afee1c44582b308becde04cf925a9c5&language=en-US&page=${number}`
         );
 
         console.log(response);
@@ -100,7 +89,7 @@ function SeriesList(props) {
       ) : page.page === 1 ? (
         <div className="button-container-flex">
           <p>{page.page}</p>
-          <Link className="page-button" to={`/series/page${next}`}>
+          <Link className="page-button" to={`/series/toprated/page${next}`}>
             {" "}
             →
           </Link>
@@ -108,17 +97,17 @@ function SeriesList(props) {
       ) : page.page === page.total_pages ? (
         <div className="button-container-flex">
           <p>{page.page}</p>
-          <Link className="page-button" to={`/series/page${previous}`}>
+          <Link className="page-button" to={`/series/toprated/page${previous}`}>
             ←
           </Link>
         </div>
       ) : (
         <div className="button-container-flex">
-          <Link className="page-button" to={`/series/page${previous}`}>
+          <Link className="page-button" to={`/series/toprated/page${previous}`}>
             ←
           </Link>
           <p>{page.page}</p>
-          <Link className="page-button" to={`/series/page${next}`}>
+          <Link className="page-button" to={`/series/toprated/page${next}`}>
             {" "}
             →
           </Link>
@@ -128,4 +117,4 @@ function SeriesList(props) {
   );
 }
 
-export default SeriesList;
+export default TopSeries;
