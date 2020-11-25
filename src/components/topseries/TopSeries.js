@@ -37,7 +37,7 @@ function TopSeries(props) {
       } catch (err) {}
     };
     fetchData();
-  }, [props]);
+  }, [props, number]);
 
   let previous = (Number(number) - 1).toString();
 

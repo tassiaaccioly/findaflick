@@ -48,7 +48,7 @@ function SeriesList(props) {
       } catch (err) {}
     };
     fetchData();
-  }, [props]);
+  }, [props, seriesinput, number]);
 
   let previous = (Number(number) - 1).toString();
 
