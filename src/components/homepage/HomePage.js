@@ -31,7 +31,7 @@ function HomePage(props) {
   return (
     <div className="homepage-container">
       <h1>Find a Flick</h1>
-      <p>What flick do you wanna find today?</p>
+      <p>Which flick do you wanna find today?</p>
       <div className="switch-searchbar">
         {movies.clickMovies ? (
           <SearchBarMovies

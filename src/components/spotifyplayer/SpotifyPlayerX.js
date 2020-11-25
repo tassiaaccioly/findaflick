@@ -66,7 +66,7 @@ function SpotifyPlayer(props) {
       <iframe
         src={`https://open.spotify.com/embed/playlist/${playlistId}`}
         title={playlistId}
-        width="300"
+        width="280"
         height="380"
         frameBorder="0"
         allowTransparency="true"

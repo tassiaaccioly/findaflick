@@ -43,7 +43,7 @@ function YoutubePlayerX(props) {
         <iframe
           title={searchTerm}
           className="video-frame"
-          src={`//www.youtube.com/embed/${videoId}?rel=0&html5=1&vq=hd720&modestbranding=1`}
+          src={`//www.youtube.com/embed/${videoId}?rel=0&vq=hd720&modestbranding=1&autoplay=0&controls=2`}
           frameBorder="0"
           allowFullScreen
         ></iframe>
