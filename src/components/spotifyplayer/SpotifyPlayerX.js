@@ -24,7 +24,7 @@ function SpotifyPlayer(props) {
     const fetchData = async () => {
       try {
         const requestToken = btoa(
-          `${process.env.REACT_APP_SPOTIFY_ID}:${process.env.REACT_APP_SPOTIFY_SECRET}`
+          `${"a36f83d55ecb426ebaa11c59ea84c897"}:${"50210a7cd808481cbf8b2798214b3d54"}`
         );
 
         const response = await axios.post(
