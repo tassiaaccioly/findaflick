@@ -38,11 +38,12 @@ function YoutubePlayerX(props) {
 
   return (
     <div className="responsive-video">
+      <h3>Trailer</h3>
       {video ? (
         <iframe
           title={searchTerm}
           className="video-frame"
-          src={`//www.youtube.com/embed/${videoId}`}
+          src={`//www.youtube.com/embed/${videoId}?rel=0&vq=hd720&modestbranding=1&autoplay=0&controls=2`}
           frameBorder="0"
           allowFullScreen
         ></iframe>
