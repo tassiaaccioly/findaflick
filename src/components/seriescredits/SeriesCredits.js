@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-
-import "./SeriesCredits.css";
 
 function SeriesCredits(props) {
   const [cast, setCast] = useState([
@@ -29,8 +26,6 @@ function SeriesCredits(props) {
         const response = await axios.get(
           `https://api.themoviedb.org/3/tv/${props.id}/credits?api_key=4afee1c44582b308becde04cf925a9c5`
         );
-
-        console.log(response);
 
         setCast([...response.data.cast]);
         setCrew([...response.data.crew]);

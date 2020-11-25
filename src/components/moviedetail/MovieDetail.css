@@ -176,7 +176,7 @@ hr {
   .media-container {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-evenly;
   }
 }
@@ -211,7 +211,7 @@ hr {
   .media-container {
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-evenly;
   }
 }

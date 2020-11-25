@@ -25,8 +25,6 @@ function SeriesList(props) {
 
   let seriesinput = "friends";
 
-  console.log(props.searchSeries);
-
   function normalizeInput() {
     seriesinput = props.searchSeries.toLowerCase().split(" ").join("%20");
     return;
@@ -47,8 +45,6 @@ function SeriesList(props) {
           `https://api.themoviedb.org/3/search/tv?api_key=4afee1c44582b308becde04cf925a9c5&language=en-US&page=${number}&query=${seriesinput}&include_adult=false`
         );
 
-        console.log(response);
-
         setList([...response.data.results]);
         setPage({ ...response.data });
       } catch (err) {}
@@ -59,8 +55,6 @@ function SeriesList(props) {
   let previous = (Number(number) - 1).toString();
 
   let next = (Number(number) + 1).toString();
-
-  console.log(page);
 
   return (
     <div className="series-list">
