@@ -26,10 +26,6 @@ function SeriesLike(props) {
     fetchData();
   }, [props]);
 
-  function reloadPage() {
-    return window.location.reload(false);
-  }
-
   return (
     <div className="scroll-container01">
       {seriesLike.slice(0, 10).map((series) => (
