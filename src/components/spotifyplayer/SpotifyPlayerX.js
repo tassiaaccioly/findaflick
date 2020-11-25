@@ -38,8 +38,6 @@ function SpotifyPlayer(props) {
           }
         );
 
-        console.log(response);
-
         const token = response.data.access_token;
 
         const artists = await axios.get(

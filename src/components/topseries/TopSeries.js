@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import "./TopSeries.css";
-
 function TopSeries(props) {
   const [list, setList] = useState([
     {
@@ -36,8 +34,6 @@ function TopSeries(props) {
           `https://api.themoviedb.org/3/tv/top_rated?api_key=4afee1c44582b308becde04cf925a9c5&language=en-US&page=${number}`
         );
 
-        console.log(response);
-
         setList([...response.data.results]);
         setPage({ ...response.data });
       } catch (err) {}
@@ -48,8 +44,6 @@ function TopSeries(props) {
   let previous = (Number(number) - 1).toString();
 
   let next = (Number(number) + 1).toString();
-
-  console.log(page);
 
   return (
     <div className="series-list">

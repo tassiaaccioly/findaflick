@@ -31,7 +31,6 @@ function YoutubePlayer(props) {
             `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=${process.env.REACT_APP_YOUTUBEAPI_KEY}`
           );
 
-          console.log(searchTerm);
           setVideo(response.data.items[0].id.videoId);
         }
       } catch (err) {}
@@ -40,8 +39,6 @@ function YoutubePlayer(props) {
   }, [props, searchTerm]);
 
   let videoId = `${video}`;
-
-  console.log(videoId);
 
   return (
     <div className="responsive-video">

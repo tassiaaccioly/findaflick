@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import "./YoutubePlayerX.css";
-
 function YoutubePlayerX(props) {
   const [video, setVideo] = useState("");
 

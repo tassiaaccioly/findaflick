@@ -41,8 +41,6 @@ function MoviesList(props) {
       try {
         number = props.match.params.num;
 
-        console.log(typeof number);
-
         const response = await axios.get(
           `https://api.themoviedb.org/3/search/multi?api_key=4afee1c44582b308becde04cf925a9c5&query=${movieinput}&page=${number}&include_adult=false`
         );
@@ -57,8 +55,6 @@ function MoviesList(props) {
   let previous = (Number(number) - 1).toString();
 
   let next = (Number(number) + 1).toString();
-
-  console.log(page);
 
   return (
     <div className="movies-list">
