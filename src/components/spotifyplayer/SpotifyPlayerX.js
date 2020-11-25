@@ -54,7 +54,7 @@ function SpotifyPlayer(props) {
       }
     };
     fetchData();
-  }, [props]);
+  }, [props, searchTerm]);
 
   let playlistId = `${playlist}`;
 

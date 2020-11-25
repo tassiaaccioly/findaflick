@@ -39,8 +39,6 @@ function SeriesList(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        number = props.match.params.num;
-
         const response = await axios.get(
           `https://api.themoviedb.org/3/search/tv?api_key=4afee1c44582b308becde04cf925a9c5&language=en-US&page=${number}&query=${seriesinput}&include_adult=false`
         );

@@ -40,8 +40,6 @@ function SpotifyPlayer(props) {
           }
         );
 
-        console.log(response);
-
         const token = response.data.access_token;
 
         const artists = await axios.get(
@@ -58,7 +56,7 @@ function SpotifyPlayer(props) {
       }
     };
     fetchData();
-  }, [props]);
+  }, [props, searchTerm]);
 
   let playlistId = `${playlist}`;
 

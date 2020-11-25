@@ -39,8 +39,6 @@ function MoviesList(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        number = props.match.params.num;
-
         const response = await axios.get(
           `https://api.themoviedb.org/3/search/multi?api_key=4afee1c44582b308becde04cf925a9c5&query=${movieinput}&page=${number}&include_adult=false`
         );
