@@ -50,7 +50,9 @@ function SpotifyPlayer(props) {
             },
           }
         );
-        setPlaylist(artists.data.playlists.items[0].id);
+        if (artists.data.playlists.items[0]) {
+          setPlaylist(artists.data.playlists.items[0].id);
+        }
       } catch (err) {
         console.error(err);
       }
