@@ -39,7 +39,7 @@ function SeriesCredits(props) {
   return (
     <div>
       <h5>
-        <strong>Director(s):</strong>
+        <strong>Creator(s):</strong>
       </h5>
       <div className="director-container scroll-container">
         {creators.map((elem) => (
