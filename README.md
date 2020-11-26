@@ -9,6 +9,8 @@ You can see it here:
 [Find a Flick](https://findaflick.vercel.app
 )
 
+[Presentation](https://docs.google.com/presentation/d/1FEgSsAIFmRllPcdpHwBemHQVcce80XN5hrkTqYq6F4Q/edit?usp=sharing)
+
 **Next Implementations:**
 
 - [x] Movie/Series list; 
