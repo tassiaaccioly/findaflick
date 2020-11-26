@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Recomendations() {
-  const randomNum = Math.round(Math.random() * 20 + 1);
+  const randomNum = Math.round(Math.random() * 100 + 1);
 
   return (
     <div className="homepage-container">
