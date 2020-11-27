@@ -28,7 +28,7 @@ function YoutubePlayer(props) {
       try {
         if (searchTerm) {
           const response = await axios.get(
-            `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=`
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${searchTerm}%20trailer%20${props.year}&key=AIzaSyDonqhSsm00YnVH55MS42d_TYKm_cJM3fk`
           );
 
           setVideo(response.data.items[0].id.videoId);
