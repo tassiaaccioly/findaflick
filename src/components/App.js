@@ -13,7 +13,6 @@ import TopMovies from "./topmovies/TopMovies";
 import TopSeries from "./topseries/TopSeries";
 import Recomendations from "./recomendations/Recomendations";
 import About from "./about/About";
-import SpotifyPlayer from "./spotifyplayer/SpotifyPlayer";
 import "./App.css";
 
 function App() {
