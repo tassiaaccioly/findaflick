@@ -18,7 +18,7 @@ You can see it here:
 - [x] Search Bar;
 - [x] Movie/Series Trailer
 - [x] Random Movie/Series Button
-- [x] Best Movies
+- [x] Best Movies/Series
 - [x] Spotify Movie/Series Playlist
 - [ ] More Informations about the movie/series
 - [ ] Actors' Informations
