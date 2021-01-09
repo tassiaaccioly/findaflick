@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import DrawerToggleButton from "./DrawerToggleButton";
+
 import "./SideDrawer.css";
 
 const sideDrawer = (props) => {
-  let drawerClasses = "side-drawer";
-  if (props.show) {
-    drawerClasses = "side-drawer open";
-  }
   return (
-    <nav className={drawerClasses}>
+    <nav className={props.show ? "side-drawer open" : "side-drawer"}>
       <ul>
         <li>
           <Link to="/toprated">Top Rated</Link>

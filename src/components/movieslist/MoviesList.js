@@ -32,9 +32,7 @@ function MoviesList(props) {
 
   normalizeInput();
 
-  let number;
-
-  number = props.match.params.num;
+  let number = props.match.params.num;
 
   useEffect(() => {
     const fetchData = async () => {

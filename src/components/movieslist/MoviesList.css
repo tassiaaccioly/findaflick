@@ -24,6 +24,7 @@
 
 .movielist-info h3 {
   font-size: 1.7rem;
+  text-align: left;
 }
 
 .movielist-info span {
@@ -32,13 +33,14 @@
 
 .movielist-info p {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
   max-height: 170px;
   overflow-y: auto;
   overflow-x: hidden;
   text-align: center;
   margin: 5px 0;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 .moviebutton-container {
