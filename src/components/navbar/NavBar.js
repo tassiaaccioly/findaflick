@@ -5,23 +5,17 @@ import Backdrop from "./Backdrop/Backdrop";
 import Toolbar from "./Toolbar/Toolbar";
 
 function NavBar() {
-  const [state, setState] = useState({
-    sideDrawerOpen: false,
-  });
+  const [drawer, setDrawer] = useState(false);
 
-  function drawerToggleClickHandler() {
-    setState({ ...state, sideDrawerOpen: !state.sideDrawerOpen });
-  }
-
-  function backdropClickHandler() {
-    setState({ ...state, sideDrawerOpen: false });
+  function handleClick() {
+    setDrawer(!drawer);
   }
 
   return (
-    <div style={{ height: "100%" }}>
-      <Toolbar drawerClickHandler={drawerToggleClickHandler} />
-      <SideDrawer show={state.sideDrawerOpen} />
-      {state.sideDrawerOpen ? <Backdrop click={backdropClickHandler} /> : <></>}
+    <div>
+      <Toolbar handleClick={handleClick} drawer={drawer} />
+      <SideDrawer show={drawer} />
+      {drawer ? <Backdrop onClick={handleClick} /> : <></>}
     </div>
   );
 }

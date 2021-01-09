@@ -2,12 +2,12 @@ import React from "react";
 
 import "./DrawerToggleButton.css";
 
-const drawerToggleButton = (props) => (
+//props.drawer (state de abertura da sidebar)
+
+const DrawerToggleButton = (props) => (
   <button className="toggle-button" onClick={props.onClick}>
-    <div className="toggle-button__line" />
-    <div className="toggle-button__line" />
-    <div className="toggle-button__line" />
+    <span className={props.drawer ? "buttonLine line1" : "buttonLine"} />
   </button>
 );
 
-export default drawerToggleButton;
+export default DrawerToggleButton;
