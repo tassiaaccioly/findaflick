@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import DrawerToggleButton from "./DrawerToggleButton";
-
 import "./SideDrawer.css";
 
 const sideDrawer = (props) => {
