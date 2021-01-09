@@ -20,6 +20,9 @@ You can see it here:
 - [x] Random Movie/Series Button
 - [x] Best Movies
 - [x] Spotify Movie/Series Playlist
+- [ ] More Informations about the movie/series
+- [ ] Actors' Informations
+- [ ] Crews' Informations
 - [ ] Search Filters
 - [ ] Mark your viewed movies
 
