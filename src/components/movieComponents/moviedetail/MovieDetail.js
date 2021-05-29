@@ -3,11 +3,11 @@ import axios from "axios";
 
 import MoviesLike from "../movieslike/MoviesLike";
 import MovieCredits from "../moviecredits/MovieCredits";
-import YoutubePlayer from "../youtubeplayer/YoutubePlayer";
-import SpotifyPlayer from "../spotifyplayer/SpotifyPlayer";
+import YoutubePlayer from "../../youtubeplayer/YoutubePlayer";
+import SpotifyPlayer from "../../spotifyplayer/SpotifyPlayer";
 
-import getRuntime from "../functions/getRuntime";
-import getYear from "../functions/getYear";
+import getRuntime from "../../../helpers/getRuntime";
+import getYear from "../../../helpers/getYear";
 
 import "./MovieDetail.css";
 
@@ -95,6 +95,7 @@ function MovieDetail(props) {
           original_title={movie.original_title}
           title={movie.title}
           name={movie.name}
+          movie={movie}
         />
         <SpotifyPlayer
           year={year}

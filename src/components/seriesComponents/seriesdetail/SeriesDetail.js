@@ -3,10 +3,10 @@ import axios from "axios";
 
 import SeriesLike from "../serieslike/SeriesLike";
 import SeriesCredits from "../seriescredits/SeriesCredits";
-import YoutubePlayerX from "../youtubeplayerX/YoutubePlayerX";
-import SpotifyPlayerX from "../spotifyplayer/SpotifyPlayerX";
+import YoutubePlayer from "../../youtubeplayer/YoutubePlayer";
+import SpotifyPlayerX from "../../spotifyplayer/SpotifyPlayerX";
 
-import getYear from "../functions/getYear";
+import getYear from "../../../helpers/getYear";
 
 import "./SeriesDetail.css";
 
@@ -48,6 +48,8 @@ function SeriesDetail(props) {
   }, [props]);
 
   let year = getYear(series.first_air_date);
+
+  console.log("This is the series year: ", year);
 
   return (
     <div className="seriesdetails">
@@ -99,10 +101,11 @@ function SeriesDetail(props) {
         <SeriesLike id={series.id} />
       </div>
       <div className="media-container">
-        <YoutubePlayerX
+        <YoutubePlayer
           year={year}
           original_name={series.original_name}
           name={series.name}
+          series={series}
         />
         <SpotifyPlayerX
           year={year}
