@@ -13,7 +13,6 @@ import TopMovies from "./topmovies/TopMovies";
 import TopSeries from "./topseries/TopSeries";
 import Recomendations from "./recomendations/Recomendations";
 import About from "./about/About";
-import SpotifyPlayer from "./spotifyplayer/SpotifyPlayer";
 import "./App.css";
 
 function App() {
@@ -75,9 +74,6 @@ function App() {
               />
               <Route path="/recomendations" component={Recomendations} />
               <Route path="/about" component={About} />
-              <Route path="/spotify">
-                <SpotifyPlayer props={"shakira"} />
-              </Route>
             </Switch>
           </ScrollReload>
         </main>

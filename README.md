@@ -9,6 +9,8 @@ You can see it here:
 [Find a Flick](https://findaflick.vercel.app
 )
 
+[Presentation](https://docs.google.com/presentation/d/1FEgSsAIFmRllPcdpHwBemHQVcce80XN5hrkTqYq6F4Q/edit?usp=sharing)
+
 **Next Implementations:**
 
 - [x] Movie/Series list; 
@@ -16,8 +18,11 @@ You can see it here:
 - [x] Search Bar;
 - [x] Movie/Series Trailer
 - [x] Random Movie/Series Button
-- [x] Best Movies
+- [x] Best Movies/Series
 - [x] Spotify Movie/Series Playlist
+- [ ] More Informations about the movie/series
+- [ ] Actors' Informations
+- [ ] Crews' Informations
 - [ ] Search Filters
 - [ ] Mark your viewed movies
 
