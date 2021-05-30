@@ -1,24 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import qs from "query-string";
+import encodeSearchTerm from "../../helpers/encodeSearchTerm";
 
 function SpotifyPlayer(props) {
   const [playlist, setPlaylist] = useState("");
 
-  let searchTerm;
-
-  const normalizeSearchTerm = () => {
-    if (props.name) {
-      return (searchTerm = props.name.toLowerCase().split(" ").join("%20"));
-    } else if (props.original_name) {
-      return (searchTerm = props.original_name
-        .toLowerCase()
-        .split(" ")
-        .join("%20"));
-    }
-  };
-
-  normalizeSearchTerm();
+  let searchTerm = encodeSearchTerm(props);
 
   useEffect(() => {
     const fetchData = async () => {

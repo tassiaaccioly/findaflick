@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import qs from "query-string";
 
-import normalizeSearchTerm from "../../helpers/normalizeSearchTerm";
+import encodeSearchTerm from "../../helpers/encodeSearchTerm";
 
 function SpotifyPlayer(props) {
   const [playlist, setPlaylist] = useState("");
 
-  let searchTerm = normalizeSearchTerm(props);
+  let searchTerm = encodeSearchTerm(props);
 
   useEffect(() => {
     const fetchData = async () => {
