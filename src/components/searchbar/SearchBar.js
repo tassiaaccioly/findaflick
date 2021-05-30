@@ -1,8 +1,22 @@
 import React from "react";
 
-function SearchBarSeries(props) {
+import "./SearchBar.css";
+
+function SearchBar(props) {
+  const {
+    searchMovie,
+    setSearchMovie,
+    searchSeries,
+    setSearchSeries,
+    search,
+    history,
+  } = props;
+
+  const isSeries = search === "series";
+
   function handleChange(event) {
-    props.setSearchSeries(event.currentTarget.value);
+    const value = event.currentTarget.value;
+    return isSeries ? setSearchSeries(value) : setSearchMovie(value);
   }
 
   function onKeyDown(event) {
@@ -14,7 +28,9 @@ function SearchBarSeries(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.history.push("/series/page1");
+    return isSeries
+      ? history.push("/series/page1")
+      : history.push("/movies/page1");
   }
 
   return (
@@ -27,7 +43,7 @@ function SearchBarSeries(props) {
           id="searchInput"
           placeholder="Find your Flick"
           onChange={handleChange}
-          value={props.searchSeries}
+          value={isSeries ? searchSeries : searchMovie}
           onKeyDown={onKeyDown}
         ></input>
       </div>
@@ -40,4 +56,4 @@ function SearchBarSeries(props) {
   );
 }
 
-export default SearchBarSeries;
+export default SearchBar;

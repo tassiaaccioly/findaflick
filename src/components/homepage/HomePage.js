@@ -1,31 +1,28 @@
 import React, { useState } from "react";
 
-import SearchBarMovies from "../searchbarmovies/SearchBarMovies";
-import SearchBarSeries from "../searchbarseries/SearchBarSeries";
+import SearchBar from "../searchbar/SearchBar";
 
 import "./HomePage.css";
 
 function HomePage(props) {
-  const [movies, setMovies] = useState({
-    clickMovies: false,
-  });
+  const {
+    searchMovie,
+    searchSeries,
+    setSearchSeries,
+    setSearchMovie,
+    history,
+  } = props;
 
-  const [series, setSeries] = useState({
-    clickSeries: false,
-  });
+  const [isMovies, setIsMovies] = useState(false);
+
+  const [isSeries, setIsSeries] = useState(false);
 
   function handleClickMovies() {
-    setMovies({
-      ...movies,
-      clickMovies: !movies.clickMovies,
-    });
+    setIsMovies(!isMovies);
   }
 
   function handleClickSeries() {
-    setSeries({
-      ...series,
-      clickSeries: !series.clickSeries,
-    });
+    setIsSeries(!isSeries);
   }
 
   return (
@@ -33,17 +30,19 @@ function HomePage(props) {
       <h1>Find a Flick</h1>
       <p>Which flick do you wanna find today?</p>
       <div className="switch-searchbar">
-        {movies.clickMovies ? (
-          <SearchBarMovies
-            searchMovie={props.searchMovie}
-            setSearchMovie={props.setSearchMovie}
-            history={props.history}
+        {isMovies ? (
+          <SearchBar
+            searchMovie={searchMovie}
+            setSearchMovie={setSearchMovie}
+            history={history}
+            search="movie"
           />
-        ) : series.clickSeries ? (
-          <SearchBarSeries
-            searchSeries={props.searchSeries}
-            setSearchSeries={props.setSearchSeries}
-            history={props.history}
+        ) : isSeries ? (
+          <SearchBar
+            searchSeries={searchSeries}
+            setSearchSeries={setSearchSeries}
+            history={history}
+            search="series"
           />
         ) : (
           <div className="mainBtn-container">
