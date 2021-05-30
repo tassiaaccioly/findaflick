@@ -1,4 +1,4 @@
-const normalizeSearchTerm = (props) => {
+const encodeSearchTerm = (props) => {
   const { name, title, original_name, original_title } = props;
   const mediaTitle = name || title || original_name || original_title || "";
 
@@ -7,4 +7,4 @@ const normalizeSearchTerm = (props) => {
   return mediaTitle?.toLowerCase().split(" ").join("%20");
 };
 
-export default normalizeSearchTerm;
+export default encodeSearchTerm;

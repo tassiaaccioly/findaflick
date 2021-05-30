@@ -1,11 +1,11 @@
 import React from "react";
-import normalizeSearchTerm from "../../helpers/normalizeSearchTerm";
+import encodeSearchTerm from "../../helpers/encodeSearchTerm";
 import useYoutubeFetch from "../../hooks/useYoutubeFetch";
 
 import "./YoutubePlayer.css";
 
 function YoutubePlayer(props) {
-  const searchTerm = normalizeSearchTerm(props);
+  const searchTerm = encodeSearchTerm(props);
 
   let query;
 
