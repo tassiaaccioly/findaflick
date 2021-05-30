@@ -5,7 +5,7 @@ import axios from "axios";
 import "./FeelsLike.css";
 
 function FeelsLike({ media, id }) {
-  const isSeries = media === "tv";
+  const isMovies = media === "movie";
 
   const [mediasLike, setMediasLike] = useState([
     {
@@ -40,10 +40,10 @@ function FeelsLike({ media, id }) {
                   : "https://sd.keepcalms.com/i/keep-calm-poster-not-found.png"
               }
               alt={`${
-                isSeries ? media.original_name : media.original_title
+                isMovies ? media.original_title : media.original_name
               }'s Poster`}
             />
-            <p>{isSeries ? media.original_name : media.original_title}</p>
+            <p>{isMovies ? media.original_title : media.original_name}</p>
           </div>
         </Link>
       ))}

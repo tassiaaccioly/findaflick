@@ -18,6 +18,10 @@
   margin: 20px 10px;
 }
 
+.feelslike-item img {
+  width: 156px;
+}
+
 .feelslike-item p {
   width: 200px;
   text-align: center;
