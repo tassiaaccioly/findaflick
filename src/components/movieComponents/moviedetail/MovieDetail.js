@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import MoviesLike from "../movieslike/MoviesLike";
+import FeelsLike from "../../feelslike/FeelsLike";
 import MovieCredits from "../moviecredits/MovieCredits";
 import YoutubePlayer from "../../youtubeplayer/YoutubePlayer";
 import SpotifyPlayer from "../../spotifyplayer/SpotifyPlayer";
@@ -87,7 +87,7 @@ function MovieDetail(props) {
       </div>
       <div className="movielike-container">
         <h5>Find Similar Movies</h5>
-        <MoviesLike id={movie.id} />
+        <FeelsLike id={movie.id} media="movie" />
       </div>
       <div className="media-container">
         <YoutubePlayer

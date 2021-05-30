@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import SeriesLike from "../serieslike/SeriesLike";
+import FeelsLike from "../../feelslike/FeelsLike";
 import SeriesCredits from "../seriescredits/SeriesCredits";
 import YoutubePlayer from "../../youtubeplayer/YoutubePlayer";
 import SpotifyPlayerX from "../../spotifyplayer/SpotifyPlayerX";
@@ -98,7 +98,7 @@ function SeriesDetail(props) {
       </div>
       <div className="serieslike-container">
         <h5>Find Similar Series</h5>
-        <SeriesLike id={series.id} />
+        <FeelsLike id={series.id} media="tv" />
       </div>
       <div className="media-container">
         <YoutubePlayer
